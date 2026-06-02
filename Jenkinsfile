@@ -1,10 +1,11 @@
-pipeline{
+pipeline {
     agent any
 
-    stages{
-        stage("Pushing the docker image"){
-
-            bat 'docker push'
+    stages {
+        stage('Build Docker Image') {
+            steps {
+                bat 'docker build -t dockerhub-demo:v1 .'
+            }
         }
     }
 }
