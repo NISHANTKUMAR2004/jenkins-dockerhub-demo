@@ -1,8 +1,10 @@
 pipeline{
     agent any
 
-    agents{
+    stages{
+        stage("Pushing the docker image"){
 
-        agent
+            bat 'docker push'
+        }
     }
 }
